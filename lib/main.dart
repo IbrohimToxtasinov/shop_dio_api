@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_dio_api/data/repository/app_repository.dart';
+import 'package:shop_dio_api/screens/income_types.dart';
 import 'package:shop_dio_api/screens/main_page.dart';
-import 'package:shop_dio_api/screens/products_page.dart';
 import 'package:shop_dio_api/view_model/categories_view_model.dart';
+import 'package:shop_dio_api/view_model/income_types_view_model.dart';
 import 'package:shop_dio_api/view_model/product_view_model.dart';
+import 'package:shop_dio_api/view_model/transactions_expenses_view_model.dart';
 import 'data/api_service/api_service.dart';
 
 void main() {
@@ -19,6 +21,20 @@ void main() {
       ),
       ChangeNotifierProvider(
         create: (context) => CategoriesViewModel(
+          appRepository: AppRepository(
+            apiService: ApiService(),
+          ),
+        ),
+      ),
+      ChangeNotifierProvider(
+        create: (context) => IncomeTypesViewModel(
+          appRepository: AppRepository(
+            apiService: ApiService(),
+          ),
+        ),
+      ),
+      ChangeNotifierProvider(
+        create: (context) => TransactionsExpensesViewModel(
           appRepository: AppRepository(
             apiService: ApiService(),
           ),

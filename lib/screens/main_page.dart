@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shop_dio_api/screens/categories_page.dart';
+import 'package:shop_dio_api/screens/income_types.dart';
 import 'package:shop_dio_api/screens/products_page.dart';
+import 'package:shop_dio_api/screens/transactions_expenses.dart';
+import 'package:shop_dio_api/view_model/transactions_expenses_view_model.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -15,8 +18,10 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> pages = [
-    const CategoriesPage(),
-    const ProductsPage(),
+    // const CategoriesPage(),
+    // const ProductsPage(),
+    const SampleUsageIncomes(),
+    const TransactionsExpensesPage(),
   ];
     return Scaffold(
       body: pages[_selectedIndex],
