@@ -9,7 +9,7 @@ class Receiver {
   final String name;
   final String location;
 
-  factory Receiver.fromJson(Map<String, dynamic> json) {
+  factory Receiver.fromJson(Map<dynamic, dynamic> json) {
     return Receiver(
       brandImage: json["brand_image"] as String? ?? "",
       name: json["name"] as String? ?? "",

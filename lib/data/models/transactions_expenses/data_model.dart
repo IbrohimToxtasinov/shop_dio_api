@@ -17,7 +17,7 @@ class Data {
   final int cardId;
   final Receiver receiver;
 
-  factory Data.fromJson(Map<String, dynamic> json) => Data(
+  factory Data.fromJson(Map<dynamic, dynamic> json) => Data(
         transactionCode: json["transaction_code"] as int? ?? 0,
         date: json["date"] as String? ?? "",
         expenseId: json["expense_id"] as int? ?? 0,

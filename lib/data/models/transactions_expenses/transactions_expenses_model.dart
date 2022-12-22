@@ -9,7 +9,7 @@ class TransactionsExpenses {
   final String transferDate;
   final List<Data> data;
 
-  factory TransactionsExpenses.fromJson(Map<String, dynamic> json) {
+  factory TransactionsExpenses.fromJson(Map<dynamic, dynamic> json) {
     return TransactionsExpenses(
       transferDate: json["transfer_date"] as String? ?? "",
       data: List<Data>.from(

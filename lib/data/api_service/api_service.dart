@@ -47,16 +47,18 @@ class ApiService extends ApiClient {
     return [];
   }
 
-Future<MyResponse> getAllTransactionsExpenses() async{
-
+  Future<MyResponse> getAllTransactionsExpenses() async {
     MyResponse myResponse = MyResponse(error: "");
-    try{
-      Response response = await  dio.get("${dio.options.baseUrl}/transactions-expenses");
-      if(response.statusCode == 200){
-        myResponse.data = (response.data as List?)?.map((e) => TransactionsExpenses.fromJson(e)).toList()??[];
+    try {
+      Response response =
+          await dio.get("${dio.options.baseUrl}/transactions-expenses");
+      if (response.statusCode == 200) {
+        myResponse.data = (response.data as List?)
+                ?.map((e) => TransactionsExpenses.fromJson(e))
+                .toList() ??
+            [];
       }
-
-    } catch(error){
+    } catch (error) {
       myResponse.error = error.toString();
     }
 
